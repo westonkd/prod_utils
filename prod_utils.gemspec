@@ -3,7 +3,7 @@ require_relative 'lib/prod_utils/version'
 Gem::Specification.new do |spec|
   spec.name          = "prod_utils"
   spec.version       = ProdUtils::VERSION
-  spec.authors       = ["TODO: Write your name"]
+  spec.authors       = ["Weston"]
   spec.email         = ["wdransfield@instructure.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
