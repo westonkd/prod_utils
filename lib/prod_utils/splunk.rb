@@ -13,7 +13,7 @@ module ProdUtils::Splunk
 
     slow_requests_for_hosts(
       ProdUtils::Database.hosts_for_cluster(cluster),
-      region: region_map[region]
+      region: ProdUtils::Database::REGION_MAP[region]
     )
   end
 end
