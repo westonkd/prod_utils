@@ -11,7 +11,7 @@ module ProdUtils::Splunk
       database_server_id: "cluster#{cluster}"
     ).limit(1).first.database_server.config[:region]
 
-    Database.slow_requests_for_hosts(
+    ProdUtils::Database.slow_requests_for_hosts(
       hosts_for_cluster(cluster),
       region: region_map[region]
     )
