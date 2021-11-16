@@ -30,6 +30,6 @@ module ProdUtils::Database
     ).map do |shard|
       hosts << hosts_for(shard)
     end
-    hosts
+    hosts.flatten
   end
 end
