@@ -15,10 +15,7 @@ module ProdUtils::Splunk
       database_server_id: "cluster#{cluster}"
     ).limit(1).first.database_server.config[:region]
 
-    slow_requests_for_hosts(
-      ProdUtils::Database.hosts_for_cluster(cluster),
-      region: region
-    )
+    "#{base_query(region)}cluster=cluster#{cluster} | where microseconds < 5000000 | sort microseconds desc"
   end
 
   def self.slow_requests_for_shard(shard_id)
