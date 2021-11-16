@@ -26,7 +26,7 @@ module ProdUtils::Splunk
 
     slow_requests_for_hosts(
       ProdUtils::Database.hosts_for(shard),
-      ProdUtils::Database.region_for(shard)
+      region: ProdUtils::Database.region_for(shard)
     )
   end
 end
